@@ -28,10 +28,14 @@ const Navbar = () => {
       {navSize > 1000 && (
         <div className="bg-primary w-full min-h-[70px] fixed z-10">
           <div className="flex justify-between px-4 h-[70px] items-center">
-            <span
+            <div
+              className="hamburgerContainer"
               onClick={() => dispatch(toggleSideBar())}
-              className="hamburger"
-            ></span>
+            >
+              <span className="hamburger1"></span>
+              <span className="hamburger2"></span>
+              <span className="hamburger3"></span>
+            </div>
 
             <h1 className="logo font-black text-3xl text-secondary">
               Mikey's Store
@@ -63,10 +67,14 @@ const Navbar = () => {
       {navSize <= 1000 && (
         <div className="bg-primary w-full min-h-[70px] items-center p-4">
           <div className="flex items-center mb-3 w-full justify-between">
-            <span
+            <div
+              className="hamburgerContainer"
               onClick={() => dispatch(toggleSideBar())}
-              className="hamburger"
-            ></span>
+            >
+              <span className="hamburger1"></span>
+              <span className="hamburger2"></span>
+              <span className="hamburger3"></span>
+            </div>
 
             <h1 className="font-black text-3xl text-secondary">
               Mikey's Store

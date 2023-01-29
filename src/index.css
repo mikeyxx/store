@@ -46,34 +46,46 @@ h2 {
   font-size: 24px;
 }
 
-.hamburger {
-  width: 36px;
-  height: 3px;
-  background-color: #012030;
+.hamburgerContainer {
   position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
   cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hamburger::before {
-  content: "";
-  width: 36px;
-  height: 3px;
-  background-color: #012030;
-  display: inline-block;
-  transform: translateY(8px);
-  position: absolute;
-  cursor: pointer;
+.hamburgerContainer:hover {
+  background-color: darkgrey;
 }
 
-.hamburger::after {
-  content: "";
+.hamburger1 {
   width: 36px;
   height: 3px;
   background-color: #012030;
   display: inline-block;
   transform: translateY(-8px);
   position: absolute;
-  cursor: pointer;
+}
+
+.hamburger2 {
+  width: 36px;
+  height: 3px;
+  background-color: #012030;
+  display: inline-block;
+  position: absolute;
+}
+
+.hamburger3 {
+  width: 36px;
+  height: 3px;
+  background-color: #012030;
+  display: inline-block;
+  transform: translateY(8px);
+  position: absolute;
 }
 
 .sideBarMenu-slider {

@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@layer components {
+  .card {
+    @apply font-bold;
+  }
+}
+
+.logo {
+  font-family: "Lobster", cursive;
+}
+
+h2 {
+  font-family: cursive;
+  font-size: 24px;
+}
+
+.hamburger {
+  width: 36px;
+  height: 3px;
+  background-color: #012030;
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburger::before {
+  content: "";
+  width: 36px;
+  height: 3px;
+  background-color: #012030;
+  display: inline-block;
+  transform: translateY(8px);
+  position: absolute;
+  cursor: pointer;
+}
+
+.hamburger::after {
+  content: "";
+  width: 36px;
+  height: 3px;
+  background-color: #012030;
+  display: inline-block;
+  transform: translateY(-8px);
+  position: absolute;
+  cursor: pointer;
+}
+
+.sideBarMenu-slider {
+  background-color: #bfbfbf;
+  max-width: 320px;
+  width: 100%;
+  min-height: 100vh;
+  transition: all 200ms ease;
+  position: absolute;
+  transform: translateX(-100%);
+}
+
+.sideBarMenu-slider.active {
+  transform: translateX(0px);
+}
+
+.gridLayout {
+  max-width: 1300px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  /* justify-content: right; */
+  margin: auto;
+
+  overflow-x: hidden;
+}
+
+/* @media (min-width: 1001px) {
+  .gridLayout {
+    margin-right: 340px;
+  }
+} */
+
+.added {
+  width: 280px;
+  height: min-content;
+  padding: 7px;
+}
+
+.added:hover {
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.addShadow {
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.1);
+}

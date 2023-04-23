@@ -23,7 +23,7 @@ const Cart = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="min-h-screen min-[1001px]:pt-[89px] px-5 bg-wallpaper">
+      <div className="min-h-screen min-[1001px]:pt-[89px] min-[380px]:pt-[20px] px-5 bg-wallpaper">
         <div className="flex max-[700px]:flex-col gap-5">
           <div className="bg-card min-h-min h-full p-4 flex-auto">
             <div>
@@ -65,7 +65,7 @@ const Cart = () => {
   }
 
   return (
-    <div className="min-h-screen min-[1001px]:pt-[89px] px-5 bg-wallpaper">
+    <div className="min-h-screen  min-[1001px]:pt-[89px] min-[380px]:pt-[20px] px-5 bg-wallpaper">
       <div className="flex max-[700px]:flex-col gap-5">
         <div className="bg-card min-h-min h-full p-4 flex-auto">
           <div className="flex w-full justify-between mb-2">

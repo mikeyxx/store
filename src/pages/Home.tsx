@@ -21,7 +21,7 @@ const Home = () => {
     let productFiltered = [...products];
     if (bySearchQuery) {
       productFiltered = productFiltered.filter((item) =>
-        item.name.toLowerCase().includes(bySearchQuery)
+        item.name.toLowerCase().includes(bySearchQuery.toLowerCase())
       );
     }
 

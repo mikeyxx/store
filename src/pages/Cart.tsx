@@ -23,9 +23,9 @@ const Cart = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="min-h-screen min-[1001px]:pt-[89px] min-[380px]:pt-[20px] px-5 bg-wallpaper">
+      <main className="min-h-screen min-[1001px]:pt-[89px] min-[380px]:pt-[20px] px-5 bg-wallpaper">
         <div className="flex max-[700px]:flex-col gap-5">
-          <div className="bg-card min-h-min h-full p-4 flex-auto">
+          <section className="bg-card min-h-min h-full p-4 flex-auto">
             <div>
               <p>Cart is empty.</p>
             </div>
@@ -39,9 +39,9 @@ const Cart = () => {
                 </span>
               </p>
             </div>
-          </div>
+          </section>
 
-          <div className="bg-card min-h-min h-full p-4">
+          <section className="bg-card min-h-min h-full p-4">
             <p>
               Subtotal ({cartItems.length}{" "}
               {cartItems.length <= 1 ? "Item" : "items"}):{" "}
@@ -58,16 +58,16 @@ const Cart = () => {
                 Home
               </button>
             </Link>
-          </div>
+          </section>
         </div>
-      </div>
+      </main>
     );
   }
 
   return (
-    <div className="min-h-screen  min-[1001px]:pt-[89px] min-[380px]:pt-[20px] px-5 bg-wallpaper">
+    <main className="min-h-screen  min-[1001px]:pt-[89px] min-[380px]:pt-[20px] px-5 bg-wallpaper">
       <div className="flex max-[700px]:flex-col gap-5">
-        <div className="bg-card min-h-min h-full p-4 flex-auto">
+        <section className="bg-card min-h-min h-full p-4 flex-auto">
           <div className="flex w-full justify-between mb-2">
             <h2>Shopping Cart</h2>
             <small>price</small>
@@ -135,9 +135,9 @@ const Cart = () => {
               </span>
             </p>
           </div>
-        </div>
+        </section>
 
-        <div className="bg-card min-h-min h-full p-4">
+        <section className="bg-card min-h-min h-full p-4">
           <p>
             Subtotal ({cartItems.length}{" "}
             {cartItems.length <= 1 ? "Item" : "items"}):{" "}
@@ -154,9 +154,9 @@ const Cart = () => {
               Home
             </button>
           </Link>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 };
 

@@ -11,11 +11,28 @@ interface Props {
 const Cards = ({ product, handleModal }: Props) => {
   const dispatch = useAppDispatch();
   return (
-    <div
+    <main
       className="cursor-pointer flex items-center  min-[1001px]:pt-[89px] min-[380px]:pt-[20px] justify-center min-w-[1200px]:h-screen pt-24 pb-4"
       onClick={() => dispatch(addItemToPdp(product))}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(event) => {
+        if (event.key === "Enter") {
+          dispatch(addItemToPdp(product));
+        }
+      }}
     >
-      <div className="added" onClick={handleModal}>
+      <section
+        className="added"
+        onClick={handleModal}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(event) => {
+          if (event.key === "Enter") {
+            handleModal();
+          }
+        }}
+      >
         <img src={product.img} alt="" />
         <div className="mt-8">
           <p>{product.name}</p>
@@ -24,8 +41,8 @@ const Cards = ({ product, handleModal }: Props) => {
         <span className="underline text-secondary font-bold block mt-7">
           Shop Now
         </span>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

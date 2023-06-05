@@ -31,14 +31,21 @@ const Pdp = ({ setShowModal, closeModal }: Props) => {
   }, []);
 
   return (
-    <div
+    <main
       id="modal"
-      className="fixed z-[1] py-[100px]  left-0 top-0 w-full h-full overflow-auto bg-black bg-[rgba(0,0,0,0.4)]"
+      className="fixed z-[1] py-[100px]  left-0 top-0 w-full h-full overflow-auto bg-[rgba(0,0,0,0.4)]"
     >
-      <div className="bg-[#fefefe] m-auto p-5 border-[1px solid #888] min-[1300px]:w-2/5 min-[320px]:w-[60%] transition-all">
+      <section className="bg-[#fefefe] m-auto p-5 border-[1px solid #888] min-[1300px]:w-2/5 min-[320px]:w-[60%] transition-all">
         <span
           onClick={closeModal}
           className="text-[#aaaaaa] float-right text-2xl font-bold cursor-pointer"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              closeModal();
+            }
+          }}
         >
           &times;
         </span>
@@ -89,8 +96,8 @@ const Pdp = ({ setShowModal, closeModal }: Props) => {
             </div>
           </div>
         ))}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

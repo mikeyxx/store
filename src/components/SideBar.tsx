@@ -15,19 +15,19 @@ const SideBar = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div
+    <main
       className={`sideBarMenu-slider ${
         slideInToggle ? "active" : ""
       }  px-4 min-[1001px]:pt-[125px] min-[320px]:pt-[30px]`}
     >
-      <div className="max-[500px]:block min-[501px]:hidden">
+      <section className="max-[500px]:block min-[501px]:hidden">
         <div className="flex items-center mb-4">
           <img src={avatar} alt="" />
         </div>
-      </div>
+      </section>
 
       <h2 className="mb-4">Product Filter</h2>
-      <div className="text-xl">
+      <section className="text-xl">
         <div className="my-2">
           <label htmlFor="ascend">
             <input
@@ -79,8 +79,8 @@ const SideBar = () => {
         <div className="my-2 bg-white rounded-md text-center cursor-pointer">
           <button onClick={() => dispatch(resetFilters())}>Clear Filter</button>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

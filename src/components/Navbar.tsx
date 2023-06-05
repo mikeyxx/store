@@ -26,21 +26,28 @@ const Navbar = () => {
   return (
     <>
       {navSize > 1000 && (
-        <div className="bg-primary w-full min-h-[70px] fixed z-10">
+        <nav className="bg-primary w-full min-h-[70px] fixed z-10">
           <div className="flex justify-between px-4 h-[70px] items-center">
-            <div
+            <section
               className="hamburgerContainer"
               onClick={() => dispatch(toggleSideBar())}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  dispatch(toggleSideBar());
+                }
+              }}
             >
               <span className="hamburger1"></span>
               <span className="hamburger2"></span>
               <span className="hamburger3"></span>
-            </div>
+            </section>
 
             <h1 className="logo font-black text-3xl text-secondary">
               Mikey's Store
             </h1>
-            <div className="flex items-center max-w-sm bg-white rounded-lg w-full px-1">
+            <section className="flex items-center max-w-sm bg-white rounded-lg w-full px-1">
               <input
                 type="search"
                 placeholder="Search..."
@@ -48,8 +55,8 @@ const Navbar = () => {
                 onChange={(e) => dispatch(filterBySearchQuery(e.target.value))}
               />
               <BiSearch className="text-xl" />
-            </div>
-            <div className="flex items-center max-w-[100px] w-full justify-between">
+            </section>
+            <section className="flex items-center max-w-[100px] w-full justify-between">
               <Link to="/cart">
                 <div className="text-white flex relative">
                   <BsCart2 className="text-2xl font-bold text-secondary" />
@@ -59,17 +66,24 @@ const Navbar = () => {
                 </div>
               </Link>
               <img src={avatar} alt="" />
-            </div>
+            </section>
           </div>
-        </div>
+        </nav>
       )}
 
       {navSize <= 1000 && (
-        <div className="bg-primary w-full min-h-[70px] items-center p-4">
+        <main className="bg-primary w-full min-h-[70px] items-center p-4">
           <div className="flex items-center mb-3 w-full justify-between">
             <div
               className="hamburgerContainer"
               onClick={() => dispatch(toggleSideBar())}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  dispatch(toggleSideBar());
+                }
+              }}
             >
               <span className="hamburger1"></span>
               <span className="hamburger2"></span>
@@ -99,7 +113,7 @@ const Navbar = () => {
             />
             <BiSearch className="text-2xl" />
           </div>
-        </div>
+        </main>
       )}
     </>
   );
